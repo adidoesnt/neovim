@@ -1,8 +1,3 @@
-vim.cmd("set termguicolors")
-vim.cmd("set tabstop=2")
-vim.g.mapleader = ' '
-vim.wo.number = true
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 				vim.fn.system({
@@ -18,6 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
 
+require("vim-options")
 vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true })
 require("lazy").setup("plugins")
 
