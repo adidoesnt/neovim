@@ -26,12 +26,10 @@ return {
 																				"sqlls",
 																				"prismals",
 																				"graphql",
-																				"gopls",
 																				"gleam",
 																				"cypher_ls",
 																				"clangd",
 																				"astro",
-																				"snyk_ls"
 																}
 												})
 								end
@@ -57,12 +55,10 @@ return {
 												nvim_lsp.sqlls.setup({})
 												nvim_lsp.prismals.setup({})
 												nvim_lsp.graphql.setup({})
-												nvim_lsp.gopls.setup({})
 												nvim_lsp.gleam.setup({})
 												nvim_lsp.cypher_ls.setup({})
 												nvim_lsp.clangd.setup({})
 												nvim_lsp.astro.setup({})
-												nvim_lsp.snyk_ls.setup({})
 								end
 				}
 }
