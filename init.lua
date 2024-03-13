@@ -11,8 +11,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local opts = {}
-
 require("vim-options")
 vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true })
 require("lazy").setup("plugins")
