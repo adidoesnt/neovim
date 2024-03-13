@@ -22,8 +22,16 @@ local plugins = {
 								'nvim-telescope/telescope.nvim', tag = '0.1.5',
 								dependencies = {'nvim-lua/plenary.nvim'}
 				},
-				{ 'nvim-tree/nvim-tree.lua', lazy = true },
 				{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+				{
+								"nvim-neo-tree/neo-tree.nvim",
+								branch = "v3.x",
+								dependencies = {
+												"nvim-lua/plenary.nvim",
+												"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+												"MunifTanjim/nui.nvim",
+								}
+				},
 				{
 								"kdheepak/lazygit.nvim",
 								cmd = {
@@ -74,15 +82,9 @@ config.setup({
 				indent = { enable = true }
 })
 
-require("nvim-tree").setup({
-				filters = {
-								dotfiles = false,
-								custom = { '^.git$' }
-				},
-})
-
 vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true }) -- install lazygiit via homebrew for this to work
-vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true })
+
+vim.keymap.set('n', '<C-b>', ':Neotree filesystem toggle<CR>', { noremap = true })
 
 vim.o.background = "dark"
 vim.cmd([[colorscheme nightfly]])
