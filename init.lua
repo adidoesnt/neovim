@@ -46,9 +46,7 @@ config.setup({
 				indent = { enable = true }
 })
 
-vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true }) -- install lazygiit via homebrew for this to work
+vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true }) -- install lazygit via homebrew for this to work
 
 vim.keymap.set('n', '<C-b>', ':Neotree filesystem toggle<CR>', { noremap = true })
 
-vim.o.background = "dark"
-vim.cmd([[colorscheme nightfly]])
