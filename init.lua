@@ -1,6 +1,7 @@
 vim.cmd("set termguicolors")
 vim.cmd("set tabstop=2")
 vim.g.mapleader = ' '
+vim.wo.number = true
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -21,6 +22,7 @@ local plugins = {
 								'nvim-telescope/telescope.nvim', tag = '0.1.5',
 								dependencies = {'nvim-lua/plenary.nvim'}
 				},
+				{ 'nvim-tree/nvim-tree.lua', lazy = true },
 				{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 				{
 								"kdheepak/lazygit.nvim",
@@ -39,7 +41,7 @@ local plugins = {
 								"zbirenbaum/copilot.lua",
 								cmd = "Copilot",
 								event = "InsertEnter",
-				}
+				},
 }
 
 local opts = {}
@@ -72,7 +74,15 @@ config.setup({
 				indent = { enable = true }
 })
 
-vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true })
+require("nvim-tree").setup({
+				filters = {
+								dotfiles = false,
+								custom = { '^.git$' }
+				},
+})
+
+vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true }) -- install lazygiit via homebrew for this to work
+vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', { noremap = true })
 
 vim.o.background = "dark"
 vim.cmd([[colorscheme nightfly]])
