@@ -12,7 +12,7 @@ return	{
 																next = "<C-n>",
 																prev = "<C-p>",
 																ignore = "<C-i>",
-																cancel = "<C-c>",	
+																cancel = "<C-c>",
 												}
 								}
 				}

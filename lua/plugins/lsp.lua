@@ -11,7 +11,7 @@ return {
 												require("mason-lspconfig").setup({
 																ensure_installed = {
 																				"tsserver",
-																				"lua_ls", 
+																				"lua_ls",
 																				"rust_analyzer",
 																				"dockerls",
 																				"jsonls",
@@ -59,6 +59,12 @@ return {
 												nvim_lsp.cypher_ls.setup({})
 												nvim_lsp.clangd.setup({})
 												nvim_lsp.astro.setup({})
+												vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+												vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
+												vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+												vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, {})
+												vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, {})
+												vim.keymap.set({ 'n', 'v' }, '<Leader>ca', vim.lsp.buf.code_action, {})
 								end
 				}
 }
