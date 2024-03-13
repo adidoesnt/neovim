@@ -18,5 +18,6 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {}
 
+vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true })
 require("lazy").setup("plugins")
 
