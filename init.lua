@@ -20,30 +20,3 @@ local opts = {}
 
 require("lazy").setup("plugins")
 
-require("copilot").setup({
-				suggestion = {
-								enabled = true,
-								auto_trigger = true,
-								keymap = {
-												accept = "<C-a>",
-												replace = "<C-r>",
-												next = "<C-n>",
-												prev = "<C-p>",
-												ignore = "<C-i>",
-												cancel = "<C-c>",	
-								}
-				}
-})
-
-
-local config = require("nvim-treesitter.configs")
-config.setup({
-				ensure_installed = {"lua", "javascript", "rust"},
-				highlight = { enable = true },
-				indent = { enable = true }
-})
-
-vim.keymap.set('n', '<Leader>lg', ':LazyGit<CR>', { noremap = true }) -- install lazygit via homebrew for this to work
-
-vim.keymap.set('n', '<C-b>', ':Neotree filesystem toggle<CR>', { noremap = true })
-

@@ -9,4 +9,4 @@ return {
 				config = function()
 								vim.keymap.set('n', '<C-b>', ':Neotree filesystem toggle<CR>', { noremap = true })
 				end
-},
+}
