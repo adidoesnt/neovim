@@ -35,9 +35,6 @@ require("copilot").setup({
 				}
 })
 
-local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})
-vim.keymap.set('n', '<C-S-f>', builtin.live_grep, {}) -- install ripgrep for this to work
 
 local config = require("nvim-treesitter.configs")
 config.setup({
